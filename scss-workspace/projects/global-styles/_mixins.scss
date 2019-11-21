@@ -1,0 +1,23 @@
+
+@import "~compass-mixins";
+
+@mixin energyBorder($size : 1px) {
+    border: $size solid black;
+    border-radius: 50%;
+    color: blue;
+}
+
+/**
+ * iterate on list size
+ create css class for each size
+ @include createBorderRadiuses(1px 10px 20px);
+ .border-radius-10px {...} .
+
+  */ 
+@mixin createBorderRadiuses($listSize) {
+    @each $size in $listSize {
+        .border-radius-#{$size} {
+            @include border-radius($size);
+        }
+    }
+}

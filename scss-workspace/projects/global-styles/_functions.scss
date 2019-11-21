@@ -1,0 +1,14 @@
+
+
+
+
+@function calculateBorderWidth($borderSize : 1px, $isReduce : true) {
+    $factor : 5;
+    @if $isReduce == true {
+        @return $borderSize / $factor;
+    }
+    @else {
+        @return $borderSize * $factor;
+    }
+    
+}

@@ -1,0 +1,29 @@
+// @import "~bootstrap/scss/mixins/border-radius";
+@import "~compass-mixins";
+// @import "~compass-mixins/utilities";
+
+$isStam : true;
+.btn {
+
+    border: calculateBorderWidth($borderSize: 2px, $isReduce: false) solid $color-primary;
+    // @include energyBorder($size : 5px);
+    // @include border-radius($radius: 20px);
+    @include border-radius(25px 10px 15px 30px);
+    @include background-image(radial-gradient(45px 45px, cyan 10px, dodgerblue 30px));
+
+    @if $isStam {
+        color: black;
+    }
+
+    background-image: url('./favicon.ico');
+}
+
+.btn-energy-danger {
+    @extend .btn;
+    background-color: red;   
+    
+}
+
+// .btn-energy-danger
+
+@include createBorderRadiuses(1px 10px 20px);
